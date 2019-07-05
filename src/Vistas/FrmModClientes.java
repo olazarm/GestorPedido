@@ -56,7 +56,7 @@ public class FrmModClientes extends javax.swing.JFrame {
         txtDireccion = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
-        btnRegistrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         txtBusq = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -94,11 +94,11 @@ public class FrmModClientes extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/save_16x16.png"))); // NOI18N
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/save_16x16.png"))); // NOI18N
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -141,7 +141,7 @@ public class FrmModClientes extends javax.swing.JFrame {
                         .addComponent(txtDireccion)
                         .addComponent(jLabel7)
                         .addComponent(txtTelefono)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(148, 148, 148))
         );
         jPanel1Layout.setVerticalGroup(
@@ -180,7 +180,7 @@ public class FrmModClientes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnRegistrar)
+                .addComponent(btnModificar)
                 .addGap(63, 63, 63))
         );
 
@@ -231,9 +231,9 @@ public class FrmModClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
        
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     private void menuIrInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuIrInicioActionPerformed
         FrmPrincipal prin = new FrmPrincipal();//proba ahi
@@ -288,7 +288,7 @@ public class FrmModClientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

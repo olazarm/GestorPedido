@@ -5,10 +5,7 @@
  */
 package Modelos;
 
-/**
- *
- * @author ajcolman
- */
+
 public class Clientes {
     private static int clien_id;
     private static String clien_nom;

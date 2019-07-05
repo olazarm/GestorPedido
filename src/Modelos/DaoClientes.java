@@ -12,10 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author ajcolman
- */
+
 public class DaoClientes {
 
     Server sv = new Server();

@@ -14,10 +14,6 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import sun.invoke.empty.Empty;
 
-/**
- *
- * @author ajcolman
- */
 public class CClientes {
 
     Server con = new Server();

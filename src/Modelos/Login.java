@@ -5,10 +5,7 @@
  */
 package Modelos;
 
-/**
- *
- * @author ajcolman
- */
+
 public class Login {
    private static int usua_id;
    private static String usua_nombre;

@@ -10,17 +10,11 @@ import Funciones.FondoImagen;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-/**
- *
- * @author ajcolman
- */
 
 public class FrmRegClientes extends javax.swing.JFrame {
   
     FondoImagen fi = new FondoImagen();
-    /**
-     * Creates new form FrmRegClientes
-     */
+
     public FrmRegClientes() {
          fi.setImage();
         setContentPane(fi);
@@ -77,6 +71,12 @@ public class FrmRegClientes extends javax.swing.JFrame {
 
         jLabel4.setText("Nro. de documento");
 
+        txtNroDoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNroDocActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Fecha de nacimiento");
 
         txtFechNaci.setDateFormatString("dd/MM/yyyy");
@@ -103,9 +103,6 @@ public class FrmRegClientes extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 159, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -128,6 +125,10 @@ public class FrmRegClientes extends javax.swing.JFrame {
                     .addComponent(txtTelefono)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(148, 148, 148))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,15 +218,17 @@ public class FrmRegClientes extends javax.swing.JFrame {
 
     private void menuOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuOpcionesActionPerformed
          
-          //con eso ya hacemos el redireccionamiento prueben ahora y borren los comentarios, dale bbcita
+         
     }//GEN-LAST:event_menuOpcionesActionPerformed
 
     private void menuIrInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuIrInicioActionPerformed
-         FrmPrincipal prin = new FrmPrincipal();//proba ahi
-          prin.setVisible(true); //lo que hacemos es mostrar la pantalla principal
-          this.dispose();// con esto cerramos la pantalla actual al ponerle this estamos haciendo referencia al actual
-         ///ya esta se tenia que hacer desde un submenu  Entiendo voy a hace mas amigable
+         FrmPrincipal prin = new FrmPrincipal();
+          this.dispose();
     }//GEN-LAST:event_menuIrInicioActionPerformed
+
+    private void txtNroDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNroDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNroDocActionPerformed
 
     /**
      * @param args the command line arguments

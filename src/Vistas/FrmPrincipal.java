@@ -1,29 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vistas;
 
 import Controladores.CClientes;
+import Controladores.CProveedores;
+import Controladores.CUsuarios;
+import Controladores.CProductos;
 import Funciones.FondoImagen;
 import Modelos.Login;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-/**
- *
- * @author ajcolman
- */
+
 public class FrmPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmPrincipal
-     */
     FondoImagen fi = new FondoImagen();
     Login lg = new Login();
     CClientes c = new CClientes();
+    CProveedores p = new CProveedores();
+    CUsuarios u = new CUsuarios();
+    CProductos pr = new CProductos();
     FrmRegClientes clie = new FrmRegClientes();
+    FrmRegProveedor prov = new FrmRegProveedor();
+    FrmRegUsuarios usua = new FrmRegUsuarios();
+    FrmRegProductos prod = new FrmRegProductos();
     public FrmPrincipal() {
         fi.setImage();
         setContentPane(fi);
@@ -39,6 +38,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         c.listarClientes(tblClientes);
         tblClientes.getTableHeader().setReorderingAllowed(false);
         tblClientes.setRowHeight(25);
+        
+        /*p.listarProveedores(tblProveedores);
+        tblProveedores.getTableHeader().setReorderingAllowed(false);
+        tblProveedores.setRowHeight(25);*/
+        
     }
 
     /**
@@ -55,11 +59,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuClientes = new javax.swing.JMenu();
         menuCrearCliente = new javax.swing.JMenuItem();
         menuModificarCliente = new javax.swing.JMenuItem();
         menuProveedores = new javax.swing.JMenu();
+        menuCrearProveedor = new javax.swing.JMenuItem();
+        menuModificarProveedor = new javax.swing.JMenuItem();
+        menuUsuarios = new javax.swing.JMenu();
+        menuCrearUsuario = new javax.swing.JMenuItem();
+        menuModificarUsuario = new javax.swing.JMenuItem();
+        menuProductos = new javax.swing.JMenu();
+        menuCrearProducto = new javax.swing.JMenuItem();
+        menuModificarProducto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +103,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Listado de Clientes");
 
+        jLabel2.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel2.setText("Listado de Proveedores");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -101,11 +118,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addComponent(lblBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
-                .addContainerGap(254, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))))))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +134,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(lblBienvenido)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(331, 331, 331))
         );
 
         menuClientes.setText("Clientes");
@@ -135,7 +157,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuClientes);
 
         menuProveedores.setText("Proveedores");
+
+        menuCrearProveedor.setText("Registrar Proveedor");
+        menuCrearProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCrearProveedorActionPerformed(evt);
+            }
+        });
+        menuProveedores.add(menuCrearProveedor);
+
+        menuModificarProveedor.setText("Modificar Proveedor");
+        menuProveedores.add(menuModificarProveedor);
+
         jMenuBar1.add(menuProveedores);
+
+        menuUsuarios.setText("Usuarios");
+
+        menuCrearUsuario.setText("Registrar Usuario");
+        menuCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCrearUsuarioActionPerformed(evt);
+            }
+        });
+        menuUsuarios.add(menuCrearUsuario);
+
+        menuModificarUsuario.setText("Modificar Usuario");
+        menuUsuarios.add(menuModificarUsuario);
+
+        jMenuBar1.add(menuUsuarios);
+
+        menuProductos.setText("Productos");
+
+        menuCrearProducto.setText("Registrar Producto");
+        menuCrearProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCrearProductoActionPerformed(evt);
+            }
+        });
+        menuProductos.add(menuCrearProducto);
+
+        menuModificarProducto.setText("Modificar Producto");
+        menuProductos.add(menuModificarProducto);
+
+        jMenuBar1.add(menuProductos);
 
         setJMenuBar(jMenuBar1);
 
@@ -143,11 +207,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         pack();
@@ -157,6 +223,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         clie.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuCrearClienteActionPerformed
+
+    private void menuCrearProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearProveedorActionPerformed
+        prov.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuCrearProveedorActionPerformed
+
+    private void menuCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearUsuarioActionPerformed
+        usua.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuCrearUsuarioActionPerformed
+
+    private void menuCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearProductoActionPerformed
+        prod.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuCrearProductoActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -195,14 +277,23 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBienvenido;
     private javax.swing.JMenu menuClientes;
     private javax.swing.JMenuItem menuCrearCliente;
+    private javax.swing.JMenuItem menuCrearProducto;
+    private javax.swing.JMenuItem menuCrearProveedor;
+    private javax.swing.JMenuItem menuCrearUsuario;
     private javax.swing.JMenuItem menuModificarCliente;
+    private javax.swing.JMenuItem menuModificarProducto;
+    private javax.swing.JMenuItem menuModificarProveedor;
+    private javax.swing.JMenuItem menuModificarUsuario;
+    private javax.swing.JMenu menuProductos;
     private javax.swing.JMenu menuProveedores;
+    private javax.swing.JMenu menuUsuarios;
     private javax.swing.JTable tblClientes;
     // End of variables declaration//GEN-END:variables
 }

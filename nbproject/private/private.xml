@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Vistas/FrmRegClientes.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Modelos/DaoClientes.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Vistas/FrmLogin.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Controladores/CLogin.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Conexion/Server.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Modelos/DaoLogin.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Controladores/CClientes.java</file>
-            <file>file:/home/ajcolman/NetBeansProjects/GestorPedido/src/Vistas/FrmPrincipal.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Vistas/FrmModClientes.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Vistas/FrmPrincipal.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Vistas/FrmRegClientes.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Conexion/Server.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Funciones/FondoImagen.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Controladores/CClientes.java</file>
+            <file>file:/C:/Users/tt/Desktop/GestorPedido/src/Modelos/DaoClientes.java</file>
         </group>
     </open-files>
 </project-private>
